@@ -1,0 +1,126 @@
+\documentclass[a4paper,12pt]{ctexart}
+	\title{\fontsize{30pt}{\baselineskip}\selectfont\textbf{《数字系统创意设计》\\课程报告}}
+	\author{}
+	\date{}
+    \usepackage{amsmath}
+    \usepackage{fancyhdr}	% 页眉页脚格式控制
+    \usepackage{caption}
+    \usepackage{titlesec}
+    \usepackage{indentfirst}
+    \usepackage{listings}	% 代码插入
+    \usepackage{xcolor}		% 颜色
+    \usepackage{fontspec}	% 选字体
+    \usepackage{subfigure}
+    \usepackage{clrscode}
+    \usepackage{hyperref}	% 交叉引用
+                            % \aref{LABEL_HERE}
+	\usepackage{makecell}	% 表格特殊单元格设计
+	\usepackage{multirow}
+	\usepackage{multicol}
+	\usepackage{longtable}
+	\usepackage{dirtree}
+	\usepackage{amssymb}
+	\usepackage{mdwlist}
+	\usepackage{graphicx}
+	\usepackage{geometry}
+	\hypersetup{pdftitle={PDFTITLE},	%pdf文件属性
+                pdfauthor={PDFAUTHOR}}
+	\geometry{left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm}
+	\setcounter{tocdepth}{3}
+	
+	\newfontfamily\consolas{Consolas}	% 引入 Monaco 字体	
+	
+	\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}	% 单元格内建表
+	
+	\pagestyle{fancy}	% 页眉 及 页脚
+		\lhead{\texttt{页眉左}}
+		\chead{}
+		\rhead{\textsl{South China University of Technology}}
+		\lfoot{}
+		\rfoot{}
+		\cfoot{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	
+	\setlength{\parindent}{2em}
+ 
+	\captionsetup[figure]{labelfont={bf},labelformat={simple},labelsep=period,name={图}}
+	\captionsetup[table]{labelfont={bf},labelformat={simple},labelsep=period,name={表}}
+	
+	\newcommand{\sectionfontsize}{\fontsize{15pt}{18pt}\selectfont}
+	\newcommand{\parfontsize}{\fontsize{12pt}{18pt}\selectfont}
+		
+	\makeatletter %使\section中的内容左对齐
+	\renewcommand{\section}{\@startsection{section}{1}{0mm}
+		{-\baselineskip}{0.5\baselineskip}{\sectionfontsize\bf\leftline}}
+	\newcommand\dlmu[2][4cm]{\hskip1pt\underline{\hb@xt@ #1{\hss#2\hss}}\hskip3pt}
+	\makeatother
+	
+	\hypersetup{hidelinks}
+	\def\figureautorefname{图}%
+	\def\tableautorefname{表}%
+	\newcommand{\aref}[1]{\textbf{\autoref{#1}}}
+	
+	\lstset{			% 代码高亮
+		numbers=left,
+		keywordstyle=\color{blue!70},
+		commentstyle=\color{red!50!green!50!blue!50},
+		rulesepcolor=\color{red!20!green!20!blue!20},
+		numberstyle=\tiny\consolas,
+		basicstyle=\small\consolas,
+		tabsize=2,
+		breaklines=true,
+		lineskip=4pt,
+		frame=shadowbox,
+		xleftmargin=2em,xrightmargin=2em, aboveskip=1em
+	}	
+	
+	\newcounter{RomanNumber}
+	\newcommand{\romanNumber}[1]{\setcounter{RomanNumber}{#1}\Roman{RomanNumber}}	
+	
+	\hfuzz=\maxdimen	% 忽略宽度限定
+	\tolerance=10000
+	\hbadness=10000
+	
+	\setlength{\baselineskip}{30pt}
+	\renewcommand{\contentsname}{\hspace*{\fill}目\quad 录\hspace*{\fill}}
+	
+\begin{document}	
+%%--------------------------FORE_PAGE---------------------------%%
+	
+	\begin{figure*} % SCUT logo
+	\centering
+	\includegraphics[scale=1.2]{images/logo.png}
+	\end{figure*}
+	\maketitle
+\begin{center} % forepage text
+	\fontsize{20pt}{\baselineskip}\selectfont\textbf{课题：\underline{}}
+	
+	\vspace{30pt}
+	
+	\fontsize{15pt}{\baselineskip}\selectfont
+	\begin{center}
+	姓名、学号：\dlmu[7cm]{}\\
+	学院、班级：\dlmu[7cm]{}\\
+	\end{center}
+	
+	\begin{figure*}[bp]\centering{华南理工大学\\DATE}\end{figure*}
+\end{center}
+	\thispagestyle{empty}
+	\clearpage
+	\thispagestyle{empty}
+	%\begin{multicols}{2}
+	\tableofcontents
+	%\end{multicols}
+	\clearpage
+		
+%%--------------------------MAIN_BODY--------------------------%%
+	\setcounter{page}{1}
+	\section{系统总体介绍}
+	\clearpage
+	\section{参考文献资料}
+		\begin{itemize*}
+		\end{itemize*}
+	\section{特别鸣谢}
+		\begin{itemize*}
+		\end{itemize*}
+\end{document}
